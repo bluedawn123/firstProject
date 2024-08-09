@@ -1,0 +1,64 @@
+@charset 'utf-8';
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:wght@400;500;600;700&family=Volkhov:wght@700&display=swap');
+
+.header_img{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/first_bg.png);
+    background-size: cover; background-position: center;
+}
+
+nav{
+    display: flex; align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    /*padding : 20px 20% 20px 20%;*/
+    padding : 15px 15%;
+    transition: 0.6s;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    text-shadow: 5px 5px 5px rgba(0,0,0, 0.2);
+}
+.logo{
+    color: white; font-size: 50px;
+}
+nav ul{
+    display:flex; gap: 40px;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block; padding: 5px 20px;
+}
+
+nav ul li a {
+    color: white; text-decoration: none; 
+    font-weight: 600; 
+    letter-spacing: 1px;
+}
+
+nav ul li a:hover{
+    color: rgb(238, 238, 238);
+    transition: 0.3s;
+}
+
+.nav_icons{
+    display: flex;
+    gap: 30px;
+    color: white; 
+    text-shadow: 0 4px 4px rgba(211, 211, 211, 0.2);
+}
+
+nav.sticky{
+    background: rgba(236, 236, 236, 0.2);
+}
+
+.logo a{
+    width: 65px; height: 65px;
+    background: url(../images/uniqlo_logo.png) no-repeat;
+    display: block;
+    text-indent: -9999em;
+  }
+
