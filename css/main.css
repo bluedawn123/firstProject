@@ -22,8 +22,8 @@ header{
     z-index: 100;
 }
 header.sticky{
-    padding: 5px 100px;
-    background: #fff;
+    /* padding: 15px 130px; */
+    background: rgba(255,255,255,0.3);
 }
 header .logo{
     position: relative;
