@@ -48,13 +48,14 @@ nav > ul > li > ul{
     position: absolute;
     display: none;
     padding-top: 20px;
-    /* width: 100%; */
+    width: 100%;
 }
 
 /* 추가 */
 nav > ul > li ul li{white-space:nowrap; color: white; font-size: 17px; text-shadow: 5px 5px 5px rgba(0,0,0, 0.2);}
-nav > ul > li:hover ul{display: block; cursor: pointer; color: rgb(238, 238, 238);
-}
+nav > ul > li:hover ul{display: block; cursor: pointer; }
+nav > ul > li > ul > li:hover{cursor: pointer; color: rgb(238, 238, 238);}
+
 
 nav ul li a {
     color: white; text-decoration: none; 
