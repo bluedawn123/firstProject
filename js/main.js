@@ -1,7 +1,24 @@
+
+
 window.addEventListener("scroll", function(){
-    var header = document.querySelector("nav");
-    header.classList.toggle("sticky", window.scrollY > 0);
-  })
+  var header = document.querySelector("nav");
+  header.classList.toggle("sticky", window.scrollY > 0);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 변수 지정
 let slideWrapper = document.querySelector('.slide-wrapper');
@@ -110,10 +127,12 @@ function goToslide(num){
 }
 
 //nextBtn 버튼을 클릭하면 현재 슬라이드 번호에 1을 더해서 gotoSlide에 전달한다
-nextBtn.addEventListener('click', ()=>{
+nextBtn.addEventListener('click', (e)=>{
+  e.preventDefault();
   goToslide(currentIdx + 1);
 });
-prevBtn.addEventListener('click', ()=>{
+prevBtn.addEventListener('click', (e)=>{
+  e.preventDefault();
   goToslide(currentIdx - 1);
 });
 
