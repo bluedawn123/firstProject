@@ -34,10 +34,6 @@ header .logo{
 
 header ul{
     /* position: relative; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
 }
 
 header ul li {
@@ -73,6 +69,4 @@ header.sticky ul li a {
 header .nav_icons{
     color: white;
     font-size: 24px;
-    display: flex;
-    gap: 40px;
 }
