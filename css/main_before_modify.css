@@ -135,14 +135,14 @@ nav.sticky{
 .slide-container .contents{
     text-align: left;
 }
-.slide-container>li .contents>h1, .slide-container>li .contents>p {
-    color: #fff;
-}
 .slide-container>li .contents>* {
+    color: #fff;
     opacity: 0;
     transition: opacity 0.2s 0.4s ease-in-out;
 }
+
 .slide-container>li.active .contents>* {
+    color: #fff;
     opacity: 1;
 }
 .slide-container>li .contents h1 {
@@ -166,34 +166,20 @@ nav.sticky{
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     font-weight: bold;}
 #sub_detail{color: red; font-size: 13px;}
-#sub_description{font-size: 35px; text-transform: uppercase;}
-.btn {
-    width: 120px;
+
+button {
     background: #fff; 
     border: none;
-    color: #615f5f;
-    padding: 15px 25px;
+    color: #413F3F;
+    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     margin-top: 20px;
     border-radius: 15px;
-    font-size: 16px; font-weight: bold;
-}
+    font-size: 16px;
+  }
 
-.btn:hover{
-    width: 120px;
-    background: #c4c2c2; 
-    border: none;
-    color: #fff;
-    padding: 15px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 20px;
-    border-radius: 15px;
-    font-size: 16px; font-weight: bold;
-}
 
 
 
@@ -252,3 +238,5 @@ nav.sticky{
 .pager a.active {
     background: #000;
 }
+
+
