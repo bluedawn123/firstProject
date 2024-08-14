@@ -155,18 +155,89 @@ nav.sticky {
     background: #ebebeb;
     text-transform: uppercase;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 220px;
+    top: 550px;
+    /* transform: translate(-50%, -50%); background: red; */
+    display: inline-block;
 }
 
-#slide1 {background-image: url(../images/slide_bg6.jpg)}
-#slide2 {background-image: url(../images/slide_bg2.jpg)}
-#slide3 {background-image: url(../images/slide_bg3.jpg)}
-#slide4 {background-image: url(../images/slide_bg4.jpg)}
-#slide5 {background-image: url(../images/slide_bg5.jpg)} 
+.slide-container .contents{
+    text-align: left;
+}
+.slide-container>li .contents>h1, .slide-container>li .contents>p {
+    color: #fff;
+}
+.slide-container>li .contents>* {
+    opacity: 0;
+    transition: opacity 0.2s 0.4s ease-in-out;
+}
+.slide-container>li.active .contents>* {
+    opacity: 1;
+}
+.slide-container>li .contents h1 {
+    font-size: 30px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.slide-container>li .contents h2 {
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    font-size: 25px;
+}
+.slide-container>li .contents p {
+    font-size: 20px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+#sub_price{color: red; margin-bottom: 10px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    font-weight: bold;}
+#sub_detail{color: red; font-size: 13px;}
+#sub_description{font-size: 35px; text-transform: uppercase;}
+.btn {
+    width: 120px;
+    background: #fff; 
+    border: none;
+    color: #615f5f;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-size: 16px; font-weight: bold;
+}
+
+.btn:hover{
+    width: 120px;
+    background: #c4c2c2; 
+    border: none;
+    color: #fff;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-size: 16px; font-weight: bold;
+}
 
 
-.pager {
+
+
+/* .slide-container>li .contents a {
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    text-decoration: none;
+    font-size: 141px;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.5);
+} 혹시몰라서 냅둠*/
+
+/* Nav */
+.slide-wrapper .controls {
     position: absolute;
     left: 0;
     right: 0;
