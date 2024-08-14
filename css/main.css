@@ -166,7 +166,7 @@ nav.sticky{
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     font-weight: bold;}
 #sub_detail{color: red; font-size: 13px;}
-#sub_description{font-size: 35px; text-transform: uppercase;}
+#sub_description{font-size: 25px; text-transform: uppercase;}
 .btn {
     width: 120px;
     background: #fff; 
