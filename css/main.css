@@ -1,0 +1,263 @@
+@charset 'utf-8';
+@import url("reset.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:wght@400;500;600;700&family=Volkhov:wght@700&display=swap");
+
+.header_img {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../images/first_bg.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.logo a {
+  width: 65px;
+  height: 65px;
+  background: url(../images/uniqlo_logo.png) no-repeat;
+  display: block;
+  text-indent: -9999em;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 15%;
+  transition: 0.6s;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  transition: all 0.2s;
+}
+
+nav ul {
+  display: flex;
+  gap: 100px;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  line-height: 40px;
+  position: relative;
+}
+
+/* 추가 */
+nav > ul > li > ul {
+  position: absolute;
+  display: none;
+  width: 100%;
+}
+
+/* 추가 */
+nav > ul > li ul li {
+  white-space: nowrap;
+  color: white;
+  font-size: 17px;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav > ul > li:hover ul {
+  display: block;
+  cursor: pointer;
+}
+
+nav > ul > li > ul > li:hover {
+  cursor: pointer;
+  color: rgb(36, 36, 36);
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav ul li a:hover {
+  color: rgb(238, 238, 238);
+}
+
+.nav_icons {
+  display: flex;
+  gap: 30px;
+  color: white;
+  text-shadow: 0 4px 4px rgba(211, 211, 211, 0.2);
+}
+
+nav.sticky {
+  position: fixed;
+  background: rgba(236, 236, 236, 0.2);
+  z-index: 9999;
+  height: 60px;
+  font-size: 18px;
+}
+
+.nav_icons .fa-solid {
+  position: relative;
+}
+
+.nav_icons .fa-solid form {
+  position: absolute;
+  display: none;
+}
+
+/* .nav_icons .fa-solid:hover form{
+    position: absolute;
+    display: none;
+} */
+
+/*----------------------- 메인 슬라이드------------------------ */
+.slidewrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 110vh;
+}
+.slidecontainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  left: 0;
+  height: 110vh;
+
+  /* 이거의 넓이에 따라 옆으로 퍼지는데 이건 slides갯수에 따라 달라지므로 js에서 해결
+    즉, 여기서 넓이를 잡는게 아니다. */
+}
+.slidecontainer.animated {
+  transition: left 0.3s;
+}
+.slide {
+  width: 100%;
+  height: 110vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  background: #ebebeb;
+  text-transform: uppercase;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+.slidecontainer li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  list-style: none;
+}
+
+#slide1 {
+  background-image: url(../images/slide_bg6.jpg);
+}
+#slide2 {
+  background-image: url(../images/slide_bg2.jpg);
+}
+#slide3 {
+  background-image: url(../images/slide_bg3.jpg);
+}
+#slide4 {
+  background-image: url(../images/slide_bg4.jpg);
+}
+#slide5 {
+  background-image: url(../images/slide_bg5.jpg);
+}
+
+
+.slidecontainer li .contents {
+  position: absolute;
+  left: 220px;
+  top: 450px;
+  text-align: left;
+}
+
+.slidecontainer li .contents h1{
+  color: #fff;
+  font-size: 30px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+#sub_price{
+  color: #a30000;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  font-size: 25px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#sub_detail{
+  color: #a30000;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.slidecontainer>li .contents p {
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+.pager {
+  position: absolute;
+  left: 0;right: 0;bottom: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pager a {
+  width: 10px;
+  height: 10px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background: #ccc;
+  text-indent: -9999em;
+  cursor: pointer;
+}
+
+.pager a.active {
+  background: #000;
+}
+
+.btn {
+    width: 120px;
+    background: #fff; 
+    border: none;
+    color: #615f5f;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-size: 16px; font-weight: bold;
+}
+
+.btn:hover{
+    width: 120px;
+    background: #c4c2c2; 
+    border: none;
+    color: #fff;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-size: 16px; font-weight: bold;
+}
+
