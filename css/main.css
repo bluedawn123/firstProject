@@ -1,7 +1,13 @@
 @charset 'utf-8';
 @import url("reset.css");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:wght@400;500;600;700&family=Volkhov:wght@700&display=swap");
-
+h3{
+  color: #fff;
+  font-size: 33px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
 .header_img {
   height: 100vh;
   width: 100%;
@@ -178,19 +184,19 @@ nav.sticky {
 .slidecontainer li .contents {
   position: absolute;
   left: 220px;
-  top: 450px;
+  top: 60%;
   text-align: left;
 }
 
 .slidecontainer li .contents h1{
   color: #fff;
-  font-size: 30px;
+  font-size: 28px;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
 }
 
 #sub_price{
-  color: #a30000;
+  color: #ff0000;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
   font-size: 25px;
   margin-top: 10px;
@@ -198,7 +204,7 @@ nav.sticky {
 }
 
 #sub_detail{
-  color: #a30000;
+  color: #ff0000;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
   font-size: 13px;
   margin-top: 5px;
@@ -211,9 +217,12 @@ nav.sticky {
   margin-bottom: 10px;
 }
 
+
+
+
 .pager {
   position: absolute;
-  left: 0;right: 0;bottom: 50px;
+  left: 0;right: 0;bottom: 150px;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -242,9 +251,10 @@ nav.sticky {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 35px;
     border-radius: 15px;
     font-size: 16px; font-weight: bold;
+    
 }
 
 .btn:hover{
@@ -256,8 +266,54 @@ nav.sticky {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 35px;
     border-radius: 15px;
     font-size: 16px; font-weight: bold;
 }
 
+.portfolio {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.portfolio-container {
+  text-align: left;
+  max-width: 98%;
+  margin: auto;
+  /* position: relative; */
+}
+.portfolio-container > div{
+  float: left;
+  width: 50%;
+  height: 750px;
+  background-size: cover;
+  position: relative;
+  transition: all 0.5s;
+}
+/* 수업시간에 했던 것처럼 after사용해서 배경 안보이게 하기 */
+.portfolio-container > div:after{
+  content: '';
+  background-color: #000;
+}
+.portfolio-container > div:hover{
+  transform: scale( 1.025 );
+  z-index: 999;
+}
+.portfolio-item1 {background-image: url(../images/portfolio1.jpg);}
+.portfolio-item2 {background-image: url(../images/portfolio2.jpg);}
+.portfolio-item3 {background-image: url(../images/portfolio3.jpg);}
+.portfolio-item4 {background-image: url(../images/portfolio4.jpg);}
+
+.portfolio-text {
+  color: #292929;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.portfolio:after {
+  content: "";
+  display: block;
+  clear: both;
+}
