@@ -440,3 +440,56 @@ footer > p{
   font-size: 14px;
   line-height: 1.24;
 }
+
+
+/* 마지막 상품창. 슬라이드  */
+.p_container{
+	width: 1700px;
+	margin:0 auto;
+}
+
+.p_slide_wrapper{
+	position: relative;
+	width: 100%;
+	margin: 50px auto 0;	
+	overflow:hidden;
+}
+.p_slides{
+	height:400px;
+	/* width:1120px; */
+	display: flex;
+	gap:30px;
+	position: relative;
+}
+.p_slides.animated{
+	left:0;
+	transition:0.5s;
+}
+
+.p_slides li{
+	width: 400px;
+	height: 400px;
+	background:#ccc;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.p_slides li h2{
+	background: rgba(0,0,0,.7);
+	color: #fff;
+	padding: 10px;
+	text-transform: uppercase;
+}
+
+.p_controls{
+	text-align: center;
+	margin-top: 50px;
+}
+
+.p_controls span{
+	background:#333;
+	color: #fff;
+	padding:10px 20px;
+	margin:0 10px;
+	display: inline-block;
+}
