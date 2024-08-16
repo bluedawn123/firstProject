@@ -61,19 +61,19 @@ function autoSlide(){
   timer = setInterval( ()=>{
     let nextIdx = (currentIdx + 1) % slideCount; 
     showSlide(nextIdx); 
-  }, 4000);
+  }, 3000);
   
 }
 
 autoSlide();
 
 //마우스 들어왔을때는 slide멈추는 기능
-slideWrapper.addEventListener('mouseenter', () => {
-    clearInterval(timer);
-})
-slideWrapper.addEventListener('mouseleave', () => {
-    autoSlide();
-})
+// slideWrapper.addEventListener('mouseenter', () => {
+//     clearInterval(timer);
+// })
+// slideWrapper.addEventListener('mouseleave', () => {
+//     autoSlide();
+// })
 
 /////////////////////////////////////////////////////////////////
 const p_slideWrapper = document.querySelector('.p_slide_wrapper');
