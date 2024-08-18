@@ -81,7 +81,7 @@ const p_slideContainer = p_slideWrapper.querySelector('.p_slides');
 const p_slides = p_slideContainer.querySelectorAll('li');
 const p_slideCount = p_slides.length;
 let p_currentIdx = 0;
-const p_slideWidth = 400;
+const p_slideWidth = 385;
 const p_slideGap = 30;
 const p_maxSlides = 3;
 const p_prevBtn = p_slideWrapper.querySelector('.p_prev');
@@ -150,7 +150,8 @@ if(p_currentIdx === -p_slideCount){
 }
 
 
-/*어떤것이 들어오던간데 slideTrigger을 false로 바꿔놔서, 해당 시간이 지나기 전에 실행을 되지 않게 한다. */
+/*어떤것이 들어오던간데 slideTrigger을 false로 바꿔놔서, 
+해당 시간이 지나기 전에 실행을 되지 않게 한다. */
 function debounce(callback, time){
   let slideTrigger = true;
   return ()=>{
