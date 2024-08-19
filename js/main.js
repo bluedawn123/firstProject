@@ -61,7 +61,7 @@ function autoSlide(){
   timer = setInterval( ()=>{
     let nextIdx = (currentIdx + 1) % slideCount; 
     showSlide(nextIdx); 
-  }, 4000);
+  }, 7000);
   
 }
 

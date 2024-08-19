@@ -3,21 +3,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:wght@400;500;600;700&family=Volkhov:wght@700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nobile:wght@400;500;700&display=swap');
 
-h3 {
-  color: #fff;
-  font-size: 33px;
-  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
+:root{
+  --footer-color : #1b1b1b;
+  --small-fontsize : 14px;
+  --mid-fontsize: 20px;
+  --white : #fff;
+  --contaier-width : 95%;
+  --shadow : 3px 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+h1{
+  color: #2e2e2e;
+  font-size: 40px;
+  text-shadow: var(--shadow);
+  margin-bottom: 20px;
   text-transform: uppercase;
 }
 
-h2{
-  color: #2e2e2e;
-  font-size: 30px;
-  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
+h2 {
+  color: var(--white);
+  font-size: 35px;
+  text-shadow: var(--shadow);
+  margin-bottom: 20px;
   text-transform: uppercase;
 }
+
+h3 {
+  color: var(--white);
+  font-size: 30px;
+  text-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+p{
+    color: var(--white);
+    font-size: var(--mid-fontsize);
+    text-shadow: var(--shadow);
+    margin-bottom: 10px; 
+}
+
+
+
+
 
 .header_img {
   height: 100vh;
@@ -53,7 +81,7 @@ nav {
 nav ul {
   display: flex;
   gap: 100px;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: var(--shadow);
 }
 
 nav ul li {
@@ -73,10 +101,10 @@ nav>ul>li>ul {
 /* 추가 */
 nav>ul>li ul li {
   white-space: nowrap;
-  color: #fff;
+  color: var(--white);
   font-size: 14px;
   font-weight: bold;
-  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: var(--shadow);
 }
 
 nav>ul>li:hover ul {
@@ -90,7 +118,7 @@ nav>ul>li>ul>li:hover {
 }
 
 nav ul li a {
-  color: #fff;
+  color: var(--white);
   text-decoration: none;
   font-weight: 600;
 }
@@ -102,8 +130,8 @@ nav ul li a:hover {
 .nav_icons {
   display: flex;
   gap: 30px;
-  color: #fff;
-  text-shadow: 0 4px 4px rgba(211, 211, 211, 0.2);
+  color: var(--white);
+  text-shadow: 0 4px 4px rgba(236, 236, 236, 0.2);
 }
 
 nav.sticky {
@@ -111,7 +139,7 @@ nav.sticky {
   background: rgba(236, 236, 236, 0.2);
   z-index: 9999;
   height: 60px;
-  font-size: 18px;
+  font-size: var(--mid-fontsize);
 }
 
 .nav_icons .fa-solid {
@@ -160,7 +188,7 @@ nav.sticky {
   justify-content: center;
   align-items: center;
   font-size: 3em;
-  background: #ebebeb;
+  background: #ccc;
   text-transform: uppercase;
   position: absolute;
   left: 0;
@@ -209,16 +237,10 @@ nav.sticky {
   text-align: left;
 }
 
-.slidecontainer li .contents h1 {
-  color: #fff;
-  font-size: 28px;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
-}
 
 #sub_price {
   color: #ff0000;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: var(--shadow);
   font-size: 25px;
   margin-top: 10px;
   font-weight: bold;
@@ -226,17 +248,11 @@ nav.sticky {
 
 #sub_detail {
   color: #ff0000;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
-  font-size: 13px;
+  text-shadow: var(--shadow);
+  font-size: 14px;
   margin-top: 5px;
 }
 
-.slidecontainer>li .contents p {
-  color: #fff;
-  font-size: 20px;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
-}
 
 
 
@@ -266,7 +282,7 @@ nav.sticky {
 }
 
 .btn {
-  width: 120px;
+  width: 140px;
   background: #fff;
   border: none;
   color: #615f5f;
@@ -276,30 +292,30 @@ nav.sticky {
   display: inline-block;
   margin-top: 35px;
   border-radius: 15px;
-  font-size: 16px;
+  font-size: var(--mid-fontsize);
   font-weight: bold;
 
 }
 
 .btn:hover {
-  width: 120px;
+  width: 140px;
   background: #c4c2c2;
   border: none;
-  color: #fff;
+  color: var(--white);
   padding: 15px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   margin-top: 35px;
   border-radius: 15px;
-  font-size: 16px;
+  font-size: var(--mid-fontsize);
   font-weight: bold;
 }
 /* --------------------announcement------------ */
 
 
 .announce-container {
-  width: 95%;
+  width: var(--contaier-width);
   margin: 20px  auto;
 }
 
@@ -326,7 +342,7 @@ nav.sticky {
 
 /* --------------------------마지막 상품창. 슬라이드 ------------------ */
 .p_container{
-	width: 95%;
+	width: var(--contaier-width);
 	margin:0 auto;
 }
 
@@ -388,17 +404,17 @@ nav.sticky {
   z-index: 999999;
 }
 .tab-slide_wrapper {
-  width: 95%;
+  width: var(--contaier-width);
   margin: 0 auto;
   z-index: 999999;
   /* overflow: hidden; */
 }
 .tab-slides {
   margin-top: 10px;
-  height: 365px;
+  height: 355px;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 30px;
   position: relative;
   justify-content: space-around;
   align-items: center;
@@ -406,7 +422,7 @@ nav.sticky {
 }
 
 .tab-slides li {
-  width: 315px;
+  width: 330px;
   height: 370px;
   background: #ccc;
   display: flex;
@@ -531,10 +547,12 @@ nav.sticky {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-size: 20px;
+  font-size: var(--mid-fontsize);
 }
 
-
+/* #portfolio-main{
+  margin-bottom: 20px;
+} */
 
 .portfolio:after {
   content: "";
@@ -547,7 +565,7 @@ nav.sticky {
 /* -----------------------footer-------------------------- */
 footer{
   width: 100%;
-  background: rgb(168, 168, 168);
+  background: linear-gradient(to left,  #555555, #ffffff);
   margin-top: 50px;
   padding: 40px 0;  
 }
@@ -570,25 +588,25 @@ footer .company{
 }
 
 footer .company p{
-  color: #1b1b1b;
+  color: var(--footer-color);
   margin-top: 14px;
-  font-size: 14px;
+  font-size: var(--small-fontsize);
   line-height: 2;
   white-space: pre-line;
 }
 
 .sitemaps dt{
-  font-size: 17px;
+  font-size: var(--mid-fontsize);
   line-height: 1.24;
-  color: #1b1b1b;
+  color: var(--footer-color);
   font-weight: 600;
   margin-bottom: 24px;
   text-align: center;
 }
 
 .sitemaps dd{
-  color: #1b1b1b;
-  font-size: 14px;
+  color: var(--footer-color);
+  font-size: var(--small-fontsize);
   line-height: 1.24;
   font-weight: 500;
   text-align: center;
@@ -602,9 +620,9 @@ footer .company p{
 } */
 
 footer > p{
-  color: #1b1b1b;
+  color: var(--footer-color);
   margin-top: 44px;
   text-align: center;
-  font-size: 14px;
+  font-size: var(--small-fontsize);
   line-height: 1.24;
 }
