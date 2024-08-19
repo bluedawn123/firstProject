@@ -406,17 +406,17 @@ nav.sticky {
   z-index: 999999;
 }
 .tab-slide_wrapper {
-  width: var(--contaier-width);
+  width: 95%;
   margin: 0 auto;
   z-index: 999999;
   /* overflow: hidden; */
 }
 .tab-slides {
   margin-top: 10px;
-  height: 355px;
+  height: 365px;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 15px;
   position: relative;
   justify-content: space-around;
   align-items: center;
@@ -424,7 +424,7 @@ nav.sticky {
 }
 
 .tab-slides li {
-  width: 330px;
+  width: 315px;
   height: 370px;
   background: #ccc;
   display: flex;
@@ -444,9 +444,9 @@ nav.sticky {
   gap: 10px;
   margin-top: 10px;
 }
-.tab-menu li{ width: 100px; text-align: center;}
+
 .tab-menu li a {
-  color: var(--light-grey);
+  color: #999;
   text-transform: uppercase;
   font-weight: bold;
   line-height: 27px;
@@ -457,10 +457,10 @@ nav.sticky {
 
 .tab-menu li a.active {
   color: #fff;
-  background: var(--drak-grey);
+  background: #000;
 }
 
-#tab-content > div {
+#tab-content div {
   display: none;
 }
 
@@ -468,18 +468,6 @@ nav.sticky {
   display: block;
 }
 
-
-
-
-
-
-
-/* .tab-container::after{
-    content: "";
-    display: block;
-    clear: both;
-    
-} */
 
 
 
