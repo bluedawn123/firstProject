@@ -10,6 +10,9 @@
   --white : #fff;
   --contaier-width : 95%;
   --shadow : 3px 3px 4px rgba(0, 0, 0, 0.2);
+  --drak-grey : #2e2e2e;
+  --mid-grey : #615f5f;
+  --light-grey : #c4c2c2;
 }
 
 
@@ -283,23 +286,22 @@ nav.sticky {
 
 .btn {
   width: 140px;
-  background: #fff;
+  background: var(--white);
   border: none;
-  color: #615f5f;
+  color: var(--mid-grey);  /*#615f5f;*/
   padding: 15px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   margin-top: 35px;
   border-radius: 15px;
-  font-size: var(--mid-fontsize);
+  font-size: var(--mid-fontsize);  /*20 */
   font-weight: bold;
-
 }
 
 .btn:hover {
   width: 140px;
-  background: #c4c2c2;
+  background: var(--light-grey);  /*#c4c2c2;*/
   border: none;
   color: var(--white);
   padding: 15px 25px;
@@ -442,9 +444,9 @@ nav.sticky {
   gap: 10px;
   margin-top: 10px;
 }
-
+.tab-menu li{ width: 100px; text-align: center;}
 .tab-menu li a {
-  color: #999;
+  color: var(--light-grey);
   text-transform: uppercase;
   font-weight: bold;
   line-height: 27px;
@@ -455,16 +457,21 @@ nav.sticky {
 
 .tab-menu li a.active {
   color: #fff;
-  background: #000;
+  background: var(--drak-grey);
 }
 
-#tab-content div {
+#tab-content > div {
   display: none;
 }
 
 #tab-content div.active {
   display: block;
 }
+
+
+
+
+
 
 
 /* .tab-container::after{
