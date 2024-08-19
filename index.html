@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -134,10 +137,11 @@
     <div class="announce-container">
       <div class="announce-wrapper">
         <div>
-          <img src="./images/announce1.jpg" alt="Description of Image">
-          <div class="overlay">sfsfsf</div>
+          <a href="#"><img src="./images/announce1.jpg" alt="Description of Image"></a>
         </div>
-        <div><img src="./images/announce2.gif" alt="Description of Image"></div>
+        <div>
+          <a href="#"><img src="./images/announce2.gif" alt="Description of Image"></a>
+        </div>
       </div>
     </div>
     <!-----------------------새상품 상품창 (new Arrival) -->
@@ -146,16 +150,52 @@
       <div class="p_slide_wrapper">
         <h1>New Arrivals</h1>
         <ul class="p_slides animated">
-          <li><img src="./images/new1.jpg" alt="Description of Image"></li>
-          <li><img src="./images/new2.jpg" alt="Description of Image"></li>
-          <li><img src="./images/new3.jpg" alt="Description of Image"></li>
-          <li><img src="./images/new4.jpg" alt="Description of Image"></li>
-          <li><img src="./images/new5.jpg" alt="Description of Image"></li>
-          <li><img src="./images/new6.jpg" alt="Description of Image"></li>
+          <li>
+            <a href="#"><img src="./images/new1.jpg" alt="Description of Image"></a>
+            <div class="p_slides_text">
+              <a href="#">TE2-SH05 린넨셔츠 - 네이비</a>
+              <span>87,000KRW</span>
+            </div>
+          </li>
+          <li>
+            <a href="#"><img src="./images/new2.jpg" alt="Description of Image"></a>
+            <div class="p_slides_text">
+              <a href="#">TC2-SH05 린넨팬츠 - 베이지</a>
+              <span>47,000KRW</span>
+            </div>
+          </li>
+          <li>
+            <a href="#"><img src="./images/new3.jpg" alt="Description of Image"></a>
+            <div class="p_slides_text">
+              <a href="#">QE2-SH05 쇼츠 - 그린</a>
+              <span>17,000KRW</span>
+            </div>
+          </li>
+          <li>
+            <a href="#"><img src="./images/new4.jpg" alt="Description of Image"></a>
+            <div class="p_slides_text">
+              <a href="#">TQQ-S105 헨리니트 - 그린</a>
+              <span>187,000KRW</span>
+            </div>
+          </li>
+          <li>
+            <a href="#"><img src="./images/new5.jpg" alt="Description of Image"></a>
+            <div class="p_slides_text">
+              <a href="#">TKE2-SH05 린넨팬츠 - 네이비</a>
+              <span>97,000KRW</span>
+            </div>
+          </li>
+          <li>
+            <a href="#"><img src="./images/new6.jpg" alt="Description of Image"></a>
+            <div class="p_slides_text">
+              <a href="#">TE2-SH05 린넨셔츠 - 네이비</a>
+              <p2>87,000KRW</p2>
+            </div>
+          </li>
         </ul>
         <p class="p_controls">
-          <span class="p_prev">prev</span>
-          <span class="p_next">next</span>
+          <span class="p_prev"> < </span>
+          <span class="p_next"> > </span>
         </p>
       </div>
     </div>
@@ -175,55 +215,251 @@
         <div id="tab-content">
           <div id="tabs-1" class="active">
             <ul class="tab-slides">
-              <li><img src="./images/men_product1.jpg" alt="Description of Image"></li>
-              <li><img src="./images/men_product2.jpg" alt="Description of Image"></li>
-              <li><img src="./images/men_product3.jpg" alt="Description of Image"></li>
-              <li><img src="./images/men_product4.jpg" alt="Description of Image"></li>
-              <li><img src="./images/men_product5.jpg" alt="Description of Image"></li>
-              <li><img src="./images/men_product6.jpg" alt="Description of Image"></li>
-              <li><img src="./images/men_product7.jpg" alt="Description of Image"></li>
-              <li><img src="./images/men_product8.jpg" alt="Description of Image"></li>
-              <li><img src="./images/men_product9.jpg" alt="Description of Image"></li>
-              <li><img src="./images/men_product10.jpg" alt="Description of Image"></li>
-              <!-- <li><img src="./images/men_product10.jpg" alt="Description of Image"></li> -->
+              <li>
+                <a href><img src="./images/men_product1.jpg" alt="Description of Image"></a>
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <a href><img src="./images/men_product2.jpg" alt="Description of Image"></a>
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/men_product3.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/men_product4.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/men_product5.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/men_product6.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/men_product7.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/men_product8.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/men_product9.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/men_product10.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
             </ul>
           </div>
           <div id="tabs-2">
             <ul class="tab-slides">
-              <li><img src="./images/women_product1.jpg" alt="Description of Image"></li>
-              <li><img src="./images/women_product2.jpg" alt="Description of Image"></li>
-              <li><img src="./images/women_product3.jpg" alt="Description of Image"></li>
-              <li><img src="./images/women_product4.jpg" alt="Description of Image"></li>
-              <li><img src="./images/women_product5.jpg" alt="Description of Image"></li>
-              <li><img src="./images/women_product6.jpg" alt="Description of Image"></li>
-              <li><img src="./images/women_product7.jpg" alt="Description of Image"></li>
-              <li><img src="./images/women_product8.jpg" alt="Description of Image"></li>
-              <li><img src="./images/women_product9.jpg" alt="Description of Image"></li>
-              <li><img src="./images/women_product10.jpg" alt="Description of Image"></li>
+              <li>
+                <img src="./images/women_product1.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/women_product2.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/women_product3.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/women_product4.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/women_product5.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/women_product6.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/women_product7.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/women_product8.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/women_product9.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/women_product10.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
 
 
             </ul>
           </div>
           <div id="tabs-3">
             <ul class="tab-slides">
-              <li><img src="./images/kids1.jpg" alt="Description of Image"></li>
-              <li><img src="./images/kids2.jpg" alt="Description of Image"></li>
-              <li><img src="./images/kids3.jpg" alt="Description of Image"></li>
-              <li><img src="./images/kids4.jpg" alt="Description of Image"></li>
-              <li><img src="./images/kids5.jpg" alt="Description of Image"></li>
-              <li><img src="./images/kids6.jpg" alt="Description of Image"></li>
-              <li><img src="./images/kid7.jpg" alt="Description of Image"></li>
-              <li><img src="./images/kid8.jpg" alt="Description of Image"></li>
-              <li><img src="./images/kid9.jpg" alt="Description of Image"></li>
+              <li>
+                <img src="./images/kids1.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/kids2.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/kids3.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/kids4.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/kids5.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/kids6.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/kid7.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/kid8.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
             </ul>
           </div>
           <div id="tabs-4">
             <ul class="tab-slides">
-              <li><img src="./images/baby1.jpg" alt="Description of Image"></li>
-              <li><img src="./images/baby2.jpg" alt="Description of Image"></li>
-              <li><img src="./images/baby3.jpg" alt="Description of Image"></li>
-              <li><img src="./images/baby4.jpg" alt="Description of Image"></li>
-              <li><img src="./images/kids5.jpg" alt="Description of Image"></li>
+              <li>
+                <img src="./images/baby1.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/baby2.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/baby3.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/baby4.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
+              <li>
+                <img src="./images/kids5.jpg" alt="Description of Image">
+                <section class="tab-text" >
+                  <a href="#">TE2-SH05 린넨셔츠 - 스모크그린</a>
+                  <span>74,570KRW</span>
+                </section>
+              </li>
             </ul>
           </div>
         </div>

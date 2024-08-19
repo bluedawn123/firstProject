@@ -1,22 +1,21 @@
 @charset 'utf-8';
 @import url("reset.css");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:wght@400;500;600;700&family=Volkhov:wght@700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Nobile:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nobile:wght@400;500;700&display=swap");
 
-:root{
-  --footer-color : #1b1b1b;
-  --small-fontsize : 14px;
+:root {
+  --footer-color: #1b1b1b;
+  --small-fontsize: 14px;
   --mid-fontsize: 20px;
-  --white : #fff;
-  --contaier-width : 95%;
-  --shadow : 3px 3px 4px rgba(0, 0, 0, 0.2);
-  --drak-grey : #2e2e2e;
-  --mid-grey : #615f5f;
-  --light-grey : #c4c2c2;
+  --white: #fff;
+  --contaier-width: 95%;
+  --shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+  --drak-grey: #2e2e2e;
+  --mid-grey: #615f5f;
+  --light-grey: #c4c2c2;
 }
 
-
-h1{
+h1 {
   color: #2e2e2e;
   font-size: 40px;
   text-shadow: var(--shadow);
@@ -39,16 +38,12 @@ h3 {
   margin-bottom: 30px;
 }
 
-p{
-    color: var(--white);
-    font-size: var(--mid-fontsize);
-    text-shadow: var(--shadow);
-    margin-bottom: 10px; 
+p {
+  color: var(--white);
+  font-size: var(--mid-fontsize);
+  text-shadow: var(--shadow);
+  margin-bottom: 10px;
 }
-
-
-
-
 
 .header_img {
   height: 100vh;
@@ -95,14 +90,14 @@ nav ul li {
 }
 
 /* 추가 */
-nav>ul>li>ul {
+nav > ul > li > ul {
   position: absolute;
   display: none;
   width: 100%;
 }
 
 /* 추가 */
-nav>ul>li ul li {
+nav > ul > li ul li {
   white-space: nowrap;
   color: var(--white);
   font-size: 14px;
@@ -110,12 +105,12 @@ nav>ul>li ul li {
   text-shadow: var(--shadow);
 }
 
-nav>ul>li:hover ul {
+nav > ul > li:hover ul {
   display: block;
   cursor: pointer;
 }
 
-nav>ul>li>ul>li:hover {
+nav > ul > li > ul > li:hover {
   cursor: pointer;
   color: rgb(0, 0, 0);
 }
@@ -198,7 +193,6 @@ nav.sticky {
   top: 0;
 }
 
-
 .slidecontainer li {
   position: absolute;
   left: 0;
@@ -232,14 +226,12 @@ nav.sticky {
   background-image: url(../images/slide_bg5.jpg);
 }
 
-
 .slidecontainer li .contents {
   position: absolute;
   left: 220px;
   top: 60%;
   text-align: left;
 }
-
 
 #sub_price {
   color: #ff0000;
@@ -255,10 +247,6 @@ nav.sticky {
   font-size: 14px;
   margin-top: 5px;
 }
-
-
-
-
 
 .pager {
   position: absolute;
@@ -288,20 +276,20 @@ nav.sticky {
   width: 140px;
   background: var(--white);
   border: none;
-  color: var(--mid-grey);  /*#615f5f;*/
+  color: var(--mid-grey); /*#615f5f;*/
   padding: 15px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   margin-top: 35px;
   border-radius: 15px;
-  font-size: var(--mid-fontsize);  /*20 */
+  font-size: var(--mid-fontsize); /*20 */
   font-weight: bold;
 }
 
 .btn:hover {
   width: 140px;
-  background: var(--light-grey);  /*#c4c2c2;*/
+  background: var(--light-grey); /*#c4c2c2;*/
   border: none;
   color: var(--white);
   padding: 15px 25px;
@@ -315,10 +303,9 @@ nav.sticky {
 }
 /* --------------------announcement------------ */
 
-
 .announce-container {
   width: var(--contaier-width);
-  margin: 20px  auto;
+  margin: 20px auto;
 }
 
 .announce-wrapper {
@@ -338,51 +325,60 @@ nav.sticky {
   object-fit: cover;
 }
 
-
-
-
-
 /* --------------------------마지막 상품창. 슬라이드 ------------------ */
-.p_container{
-	width: var(--contaier-width);
-	margin:0 auto;
+.p_container {
+  width: var(--contaier-width);
+  margin: 0 auto;
 }
 
-.p_slide_wrapper{
-	position: relative;
-	width: 100%;
-	margin: 50px auto 0;	
-	overflow:hidden;
+.p_slide_wrapper {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  margin: 50px auto 0;
+  overflow: hidden;
 }
-.p_slides{
-	height:400px;
-	/* width:1120px; */
-	display: flex;
-	gap:30px;
-	position: relative;
+.p_slides {
+  height: 420px;
+  /* width:1120px; */
+  display: flex;
+  gap: 30px;
+  position: relative;
 }
-.p_slides.animated{
-	left:0;
-	transition:0.5s;
-}
-
-.p_slides li{
-	width: 400px;
-	height: 400px;
-	background:#ccc;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.p_slides li > img{
-    width: 100%; height: 100%; object-fit: cover;
+.p_slides.animated {
+  left: 0;
+  transition: 0.5s;
 }
 
-.p_slides li h2{
-	background: rgba(0,0,0,.7);
-	color: #fff;
-	padding: 10px;
-	text-transform: uppercase;
+.p_slides li {
+  width: 400px;
+  height: 400px;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.p_slides li a,
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p_slides_text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: var(--small-fontsize);
+  bottom: -40px;
+  font-weight: bold;
+  color: var(--drak-grey);
+  white-space: pre-line;
+}
+.p_slides_text a {
+  display: inline-block; 
+  margin-bottom: 5px; 
 }
 
 .p_controls{
@@ -390,53 +386,74 @@ nav.sticky {
 	margin-top: 50px;
 }
 
-.p_controls span{
-	background:#333;
-	color: #fff;
-	padding:10px 20px;
-	margin:0 10px;
-	display: inline-block;
+.p_controls span {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0 10px;
+  display: inline-block;
 }
+
+
+
 
 
 /*-------------------tab------------------------- */
-.tab-container{
+/* .tab-container{
   width: 100%;
   margin: 0 auto;
   z-index: 999999;
-}
+} */
 .tab-slide_wrapper {
   width: 95%;
   margin: 0 auto;
-  z-index: 999999;
-  /* overflow: hidden; */
+  /* z-index: 999; */
 }
+
 .tab-slides {
   margin-top: 10px;
-  height: 365px;
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  position: relative;
   justify-content: space-around;
   align-items: center;
-  
 }
 
 .tab-slides li {
   width: 315px;
-  height: 370px;
+  height: 375px;
   background: #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
-  
-}
-.tab-slides li > img{
-  width: 100%; height: 100%; object-fit: cover;
+  margin-bottom: 50px;
+  position: relative;
 }
 
- .tab-menu {
+.tab-slides li  img, a {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tab-text span{
+  display: inline-block;
+  margin-top: 5px;
+}
+
+
+.tab-text{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: var(--small-fontsize);
+  bottom: -40px;
+  font-weight: bold;
+  color: var(--drak-grey);
+  white-space: pre-line;
+}
+
+.tab-menu {
   padding-left: 0;
   position: relative;
   z-index: 1;
@@ -468,16 +485,12 @@ nav.sticky {
   display: block;
 }
 
-
-
-
 /* ------------------portfolies------------- */
 .portfolio {
-  margin-top: 450px;
+  margin-top: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
-
 
 .portfolio-container {
   text-align: left;
@@ -498,7 +511,7 @@ nav.sticky {
 
 /* 수업시간에 했던 것처럼 after사용해서 배경 안보이게 하기 */
 .portfolio-container > div::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -510,14 +523,13 @@ nav.sticky {
   transition: all 0.3 ease-out;
 }
 
-.portfolio-container>div:hover {
+.portfolio-container > div:hover {
   transform: scale(1.04);
   z-index: 999;
 }
-.portfolio-container > div:hover:after{
+.portfolio-container > div:hover:after {
   opacity: 1;
 }
-
 
 .portfolio-item1 {
   background-image: url(../images/portfolio1.jpg);
@@ -555,34 +567,32 @@ nav.sticky {
   clear: both;
 }
 
-
-
 /* -----------------------footer-------------------------- */
-footer{
+footer {
   width: 100%;
-  background: linear-gradient(to left,  #555555, #ffffff);
+  background: linear-gradient(to left, #555555, #ffffff);
   margin-top: 50px;
-  padding: 40px 0;  
+  padding: 40px 0;
 }
-.footer_container{
+.footer_container {
   width: 70%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
 
-.sitemaps{
+.sitemaps {
   display: flex;
-  flex:2;
+  flex: 2;
   justify-content: center;
-  gap:70px;
+  gap: 70px;
 }
 
-footer .company{
+footer .company {
   width: 30%;
 }
 
-footer .company p{
+footer .company p {
   color: var(--footer-color);
   margin-top: 14px;
   font-size: var(--small-fontsize);
@@ -590,7 +600,7 @@ footer .company p{
   white-space: pre-line;
 }
 
-.sitemaps dt{
+.sitemaps dt {
   font-size: var(--mid-fontsize);
   line-height: 1.24;
   color: var(--footer-color);
@@ -599,22 +609,21 @@ footer .company p{
   text-align: center;
 }
 
-.sitemaps dd{
+.sitemaps dd {
   color: var(--footer-color);
   font-size: var(--small-fontsize);
   line-height: 1.24;
   font-weight: 500;
   text-align: center;
-  
 }
-.sitemaps dd + dd{
+.sitemaps dd + dd {
   margin-top: 12px;
 }
 /* footer nav dd a{
   
 } */
 
-footer > p{
+footer > p {
   color: var(--footer-color);
   margin-top: 44px;
   text-align: center;
