@@ -46,7 +46,6 @@ p {
   color: var(--white);
   font-size: var(--mid-fontsize);
   text-shadow: var(--shadow);
-  margin-bottom: 10px;
 }
 
 a,img:hover{
@@ -264,7 +263,7 @@ nav.sticky {
   color: #ff0000;
   text-shadow: var(--shadow);
   font-size: 14px;
-  margin-top: 5px;
+  margin-top: 15px;
 }
 
 .pager {
@@ -300,7 +299,7 @@ nav.sticky {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin-top: 35px;
+  margin-top: 25px;
   border-radius: 15px;
   font-size: var(--mid-fontsize); /*20 */
   font-weight: bold;
@@ -315,7 +314,7 @@ nav.sticky {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin-top: 35px;
+  margin-top: 25px;
   border-radius: 15px;
   font-size: var(--mid-fontsize);
   font-weight: bold;
@@ -393,7 +392,7 @@ img {
   bottom: -40px;
   font-weight: bold;
   color: var(--drak-grey);
-  white-space: pre-line;
+  /* white-space: pre-line; */
 }
 .p_slides_text a {
   display: inline-block; 
@@ -464,12 +463,7 @@ img {
 }
 
 figcaption{
-  flex:1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;  
-  flex-direction: column;
-  text-align: center;
+  margin-top: 5px;
 }
 
 figcaption p{
@@ -477,7 +471,11 @@ figcaption p{
   font-weight: bold;
   font-size: var(--small-fontsize);
 }
-
+figcaption p:nth-child(2){
+  font-weight: bold;
+  color: var(--drak-grey);
+  margin-top: 3px;
+}
 
 .tab-text span{
   display: inline-block;
