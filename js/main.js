@@ -450,6 +450,9 @@ for (let i = 0; i < 10; i++) {
   )
 }
 
+
+
+
 searchInput.addEventListener('change', (e) => {
   let keywords = e.target.value
 
@@ -462,7 +465,11 @@ searchInput.addEventListener('change', (e) => {
   for (let item of filteredArr) {
     imageListItem[item.id].classList.remove('d-none');
   }
-  //count 갯수변경
+  
+  if(filteredArr == ''){
+    console.log('없음')
+  }
+
 })
 
 
@@ -692,7 +699,7 @@ for (let tm of tabMenu) {
       })
       imageList.innerHTML = emptyHtml4
 
-    } else {
+    } else  {
       search_wrapper.classList.remove(dnone)
       priceSelector.classList.remove(dnone)
 
@@ -717,7 +724,7 @@ for (let tm of tabMenu) {
             </li>`
       })
       imageList.innerHTML = newItems
-KRW
+
     }
   });
 }
