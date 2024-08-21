@@ -45,6 +45,9 @@ window.onload = function () {
 
 /////////////////////////메인슬라이드/////////////////////////
 
+
+
+
 const slideWrapper = document.querySelector('.slidewrapper');
 const slideContainer = slideWrapper.querySelector('.slidecontainer');
 const slides = slideWrapper.querySelectorAll('.slide');
@@ -99,7 +102,7 @@ function autoSlide() {
   timer = setInterval(() => {
     let nextIdx = (currentIdx + 1) % slideCount;
     showSlide(nextIdx);
-  }, 7000);
+  }, 5000);
 
 }
 
@@ -221,15 +224,15 @@ function AutoSlide(){
     let p_nextIdx = (p_currentIdx + 1)%p_slideCount;
 
     moveSlide(p_nextIdx);
-  }, 4000);
+  }, 2000);
 }
 
-// AutoSlide();
+AutoSlide();
 
-slideWrapper.addEventListener('mouseenter',()=>{
+p_slideWrapper.addEventListener('mouseenter',()=>{
   clearInterval(timer);
 });
-slideWrapper.addEventListener('mouseleave',()=>{
+p_slideWrapper.addEventListener('mouseleave',()=>{
   AutoSlide();
 });
 
