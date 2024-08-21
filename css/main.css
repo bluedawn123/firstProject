@@ -15,7 +15,6 @@
   --light-grey: #c4c2c2;
   --black: #1a1a1a;
   --darkgreen: #18846C;
-  --lightbrown:rgb(14, 14, 14)ewhite;
   --darkblack: rgba(0,0,0,0.8);
   --minRangeValue: 280px; 
 }
@@ -245,7 +244,7 @@ nav.sticky {
   text-align: left;
 }
 
-#sub_price {
+.sub_price {
   color: #ff0000;
   text-shadow: var(--shadow);
   font-size: 25px;
@@ -253,7 +252,7 @@ nav.sticky {
   font-weight: bold;
 }
 
-#sub_detail {
+.sub_detail {
   color: #ff0000;
   text-shadow: var(--shadow);
   font-size: 14px;

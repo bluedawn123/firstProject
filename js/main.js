@@ -37,7 +37,6 @@ showSlide(0)
 
 
 function showSlide(num){
-    console.log(num);
     if(currentIdx === num) return; 
     let currentSlide = slides[currentIdx];
     let nextSlide = slides[num];
@@ -132,7 +131,7 @@ p_currentIdx = num;
       p_slideContainer.classList.add('animated');
     }, 600)
   }
-  console.log(p_currentIdx);
+
 
 
 if(p_currentIdx === -p_slideCount){
@@ -349,7 +348,7 @@ product1.slice(0,10).forEach(item => {
     <img src="${item.url}" alt="">
     <figcaption>
       <p>${item.title}</p>
-      <p>${item.price}KRW</p>
+      <p>${item.price}</p>
     </figcaption>
   </figure>
 </li>`
@@ -376,9 +375,6 @@ for (let i = 0; i < captions.length; i++) {
   });
 }
 
-console.log(captionArr); //빈 배열에 잘 들어간다. 
-
-
 const top10 = [];
 for (let i = 0; i < 10; i++){
   top10.push({
@@ -390,11 +386,6 @@ for (let i = 0; i < 10; i++){
   }
   )
 }
-
-console.log(top10);
-
-
-
 
 searchInput.addEventListener('change', (e) => {
   let keywords = e.target.value
@@ -416,12 +407,14 @@ searchInput.addEventListener('change', (e) => {
 const priceSelector = document.querySelector("#price__selector");
 priceSelector.addEventListener("change", (e) => {
   if (e.target.value == "낮은 가격순") {
-      console.log(e.target.value)
+
       //낮은가격순일때 할일
       //모든 아이템을 일단 없애준다.
       imageListItem.forEach( item => {
           item.classList.add(dnone)
       })
+
+      console.log(imageListItem)
 
       //내림차순을 만들어준다.
       const newCaptionArr1 = [...captionArr];
@@ -440,7 +433,7 @@ priceSelector.addEventListener("change", (e) => {
             <img src="${item.url}" alt="">
             <figcaption>
               <p>${item.text}</p>
-              <p>${item.price}KRW</p>
+              <p>${item.price}</p>
             </figcaption>
           </figure>
         </li>`
@@ -467,7 +460,7 @@ priceSelector.addEventListener("change", (e) => {
             <img src="${item.url}" alt="">
             <figcaption>
               <p>${item.text}</p>
-              <p>${item.price}KRW</p>
+              <p>${item.price}</p>
             </figcaption>
           </figure>
         </li>`
@@ -491,7 +484,7 @@ priceSelector.addEventListener("change", (e) => {
             <img src="${item.url}" alt="">
             <figcaption>
               <p>${item.text}</p>
-              <p>${item.price}KRW</p>
+              <p>${item.price}</p>
             </figcaption>
           </figure>
         </li>`
@@ -544,7 +537,7 @@ for (let tm of tabMenu) {
                   <img src="${item.url}" alt="">
                   <figcaption>
                       <p>${item.title}</p>
-                      <p>${item.price}KRW</p>
+                      <p>${item.price}</p>
                   </figcaption>
               </figure>
           </li>`
@@ -574,7 +567,7 @@ for (let tm of tabMenu) {
                   <img src="${item.url}" alt="">
                   <figcaption>
                       <p>${item.title}</p>
-                      <p>${item.price}KRW</p>
+                      <p>${item.price}</p>
                   </figcaption>
               </figure>
           </li>`
@@ -602,7 +595,7 @@ for (let tm of tabMenu) {
                   <img src="${item.url}" alt="">
                   <figcaption>
                       <p>${item.title}</p>
-                      <p>${item.price}KRW</p>
+                      <p>${item.price}</p>
                   </figcaption>
               </figure>
           </li>`
@@ -629,7 +622,7 @@ for (let tm of tabMenu) {
                   <img src="${item.url}" alt="">
                   <figcaption>
                       <p>${item.title}</p>
-                      <p>${item.price}KRW</p>
+                      <p>${item.price}</p>
                   </figcaption>
               </figure>
           </li>`
@@ -655,7 +648,7 @@ for (let tm of tabMenu) {
                 <img src="${item.url}" alt="">
                 <figcaption>
                   <p>${item.text}</p>
-                  <p>${item.price}KRW</p>
+                  <p>${item.price}</p>
                 </figcaption>
               </figure>
             </li>`
