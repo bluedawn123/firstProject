@@ -13,6 +13,13 @@
   --drak-grey: #2e2e2e;
   --mid-grey: #615f5f;
   --light-grey: #c4c2c2;
+  --black: #1a1a1a;
+  --white: #fff;
+  --gray: #ccc;
+  --darkgreen: #18846C;
+  --lightbrown: antiquewhite;
+  --darkblack: rgba(0,0,0,0.8);
+  --minRangeValue: 280px; 
 }
 
 h1 {
@@ -399,46 +406,104 @@ img {
 
 
 /*-------------------tab------------------------- */
-/* .tab-container{
-  width: 100%;
+
+.tab-container {
+  max-width: 95%;
   margin: 0 auto;
-  z-index: 999999;
+  /* position: relative; */
+}
+
+.d-none {
+  display: none;
+}
+
+/* TOOLBAR
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.toolbar{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.view-options{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.view-options button{
+  border: 3px solid transparent;
+  padding: 2px;
+}
+.active button{
+  border-color: var(--darkgreen);
+}
+
+
+/* IMAGE LIST
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* GRID VIEW
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+
+button {
+  cursor: pointer;
+  background: none;
+}
+
+/* img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 } */
-.tab-slide_wrapper {
-  width: 95%;
-  margin: 0 auto;
-  /* z-index: 999; */
+
+/*1. 280px로 줄어들면 1fr으로 줄여라. */
+.grid-view{
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(var(--minRangeValue), 1fr));
 }
 
-.tab-slides {
-  margin-top: 10px;
+/* LIST VIEW
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* list-view 가 있을떄 그 안의 figure에  */
+.list-view{
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+  gap:20px;
 }
-
-.tab-slides li {
-  width: 315px;
-  height: 375px;
-  background: #ccc;
+.list-view figure{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
-  position: relative;
+}
+.list-view figure img{
+  width: 200px;
 }
 
-.tab-slides li  img, a {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.image-list li{
+  text-align: center;
 }
+
+figcaption{
+  flex:1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;  
+  flex-direction: column;
+  text-align: center;
+}
+
+figcaption p{
+  color: black;
+  font-weight: bold;
+  font-size: var(--small-fontsize);
+}
+
 
 .tab-text span{
   display: inline-block;
-  margin-top: 5px;
+  margin-top: 3px;
 }
 
 
@@ -460,6 +525,8 @@ img {
   display: flex;
   gap: 10px;
   margin-top: 10px;
+  margin-bottom: 20px;
+  
 }
 
 .tab-menu li a {
@@ -472,7 +539,7 @@ img {
   display: block;
 }
 
-.tab-menu li a.active {
+.tab-menu li a.tab-active {
   color: #fff;
   background: #000;
 }
@@ -481,9 +548,20 @@ img {
   display: none;
 }
 
-#tab-content div.active {
+#tab-content div.tab-active {
   display: block;
 }
+
+.conditioners{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
 
 /* ------------------portfolies------------- */
 .portfolio {
