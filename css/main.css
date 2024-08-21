@@ -14,10 +14,8 @@
   --mid-grey: #615f5f;
   --light-grey: #c4c2c2;
   --black: #1a1a1a;
-  --white: #fff;
-  --gray: #ccc;
   --darkgreen: #18846C;
-  --lightbrown: antiquewhite;
+  --lightbrown:rgb(14, 14, 14)ewhite;
   --darkblack: rgba(0,0,0,0.8);
   --minRangeValue: 280px; 
 }
@@ -52,6 +50,11 @@ p {
   margin-bottom: 10px;
 }
 
+img:hover{
+  cursor: pointer;
+}
+
+
 .header_img {
   height: 100vh;
   width: 100%;
@@ -66,6 +69,7 @@ p {
   background: url(../images/uniqlo_logo.png) no-repeat;
   display: block;
   text-indent: -9999em;
+  
 }
 
 nav {
@@ -87,6 +91,7 @@ nav ul {
   display: flex;
   gap: 100px;
   text-shadow: var(--shadow);
+  
 }
 
 nav ul li {
@@ -141,7 +146,7 @@ nav ul li a:hover {
 
 nav.sticky {
   position: fixed;
-  background: rgba(236, 236, 236, 0.2);
+  background: rgba(66, 66, 66, 0.2);
   z-index: 9999;
   height: 60px;
   font-size: var(--mid-fontsize);
@@ -424,40 +429,6 @@ img {
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.view-options{
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-.view-options button{
-  border: 3px solid transparent;
-  padding: 2px;
-}
-.active button{
-  border-color: var(--darkgreen);
-}
-
-
-/* IMAGE LIST
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-
-/* GRID VIEW
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-
-
-
-button {
-  cursor: pointer;
-  background: none;
-}
-
-/* img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-} */
 
 /*1. 280px로 줄어들면 1fr으로 줄여라. */
 .grid-view{

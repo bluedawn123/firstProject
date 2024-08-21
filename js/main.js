@@ -349,7 +349,7 @@ product1.slice(0,10).forEach(item => {
     <img src="${item.url}" alt="">
     <figcaption>
       <p>${item.title}</p>
-      <p>${item.price}</p>
+      <p>${item.price}KRW</p>
     </figcaption>
   </figure>
 </li>`
@@ -440,7 +440,7 @@ priceSelector.addEventListener("change", (e) => {
             <img src="${item.url}" alt="">
             <figcaption>
               <p>${item.text}</p>
-              <p>${item.price}</p>
+              <p>${item.price}KRW</p>
             </figcaption>
           </figure>
         </li>`
@@ -467,7 +467,7 @@ priceSelector.addEventListener("change", (e) => {
             <img src="${item.url}" alt="">
             <figcaption>
               <p>${item.text}</p>
-              <p>${item.price}</p>
+              <p>${item.price}KRW</p>
             </figcaption>
           </figure>
         </li>`
@@ -491,7 +491,7 @@ priceSelector.addEventListener("change", (e) => {
             <img src="${item.url}" alt="">
             <figcaption>
               <p>${item.text}</p>
-              <p>${item.price}</p>
+              <p>${item.price}KRW</p>
             </figcaption>
           </figure>
         </li>`
@@ -523,8 +523,9 @@ for (let tm of tabMenu) {
       //선택한 것이 남자라면
       if (target === 'men') {
           //셀렉터 안보이게
-          search_wrapper.classList.remove(dnone)
-          priceSelector.classList.remove(dnone)
+          search_wrapper.classList.add(dnone)
+          priceSelector.classList.add(dnone)
+
 
           //일단없애주고
           imageListItem.forEach((item, idx, all) => {
@@ -543,7 +544,7 @@ for (let tm of tabMenu) {
                   <img src="${item.url}" alt="">
                   <figcaption>
                       <p>${item.title}</p>
-                      <p>${item.price}</p>
+                      <p>${item.price}KRW</p>
                   </figcaption>
               </figure>
           </li>`
@@ -553,8 +554,9 @@ for (let tm of tabMenu) {
           
 
       } else if (target === 'women') {
-          search_wrapper.classList.remove(dnone)
-          priceSelector.classList.remove(dnone)
+          search_wrapper.classList.add(dnone)
+          priceSelector.classList.add(dnone)
+
 
           //일단없애주고
           imageListItem.forEach((item, idx, all) => {
@@ -572,7 +574,7 @@ for (let tm of tabMenu) {
                   <img src="${item.url}" alt="">
                   <figcaption>
                       <p>${item.title}</p>
-                      <p>${item.price}</p>
+                      <p>${item.price}KRW</p>
                   </figcaption>
               </figure>
           </li>`
@@ -580,8 +582,9 @@ for (let tm of tabMenu) {
           imageList.innerHTML = emptyHtml2
 
       } else if (target === 'kids') {
-          search_wrapper.classList.remove(dnone)
-          priceSelector.classList.remove(dnone)
+          search_wrapper.classList.add(dnone)
+          priceSelector.classList.add(dnone)
+
 
           //일단없애주고
           imageListItem.forEach((item, idx, all) => {
@@ -599,7 +602,7 @@ for (let tm of tabMenu) {
                   <img src="${item.url}" alt="">
                   <figcaption>
                       <p>${item.title}</p>
-                      <p>${item.price}</p>
+                      <p>${item.price}KRW</p>
                   </figcaption>
               </figure>
           </li>`
@@ -607,8 +610,8 @@ for (let tm of tabMenu) {
           imageList.innerHTML = emptyHtml3
 
       } else if (target === 'baby') {
-          search_wrapper.classList.remove(dnone)
-          priceSelector.classList.remove(dnone)
+          search_wrapper.classList.add(dnone)
+          priceSelector.classList.add(dnone)
 
           //일단없애주고
           imageListItem.forEach((item, idx, all) => {
@@ -626,7 +629,7 @@ for (let tm of tabMenu) {
                   <img src="${item.url}" alt="">
                   <figcaption>
                       <p>${item.title}</p>
-                      <p>${item.price}</p>
+                      <p>${item.price}KRW</p>
                   </figcaption>
               </figure>
           </li>`
@@ -652,7 +655,7 @@ for (let tm of tabMenu) {
                 <img src="${item.url}" alt="">
                 <figcaption>
                   <p>${item.text}</p>
-                  <p>${item.price}</p>
+                  <p>${item.price}KRW</p>
                 </figcaption>
               </figure>
             </li>`
