@@ -21,6 +21,12 @@
 </head>
 
 <body>
+  <div class="popup">
+    <p>해당 사이트는 개인 포트폴리오용 사이트입니다.</p>
+    <p>하루 동안 이 창이 다시 뜨지 않습니다.</p>
+    <button onclick="closePopup()">닫기</button>
+  </div>
+
   <header class="page-header">
     <div class="header_img">
       <nav>
@@ -190,8 +196,11 @@
         </ul>
         <p class="p_controls">
           <span class="p_prev">
-            prev </span>
-          <span class="p_next"> next </span>
+            <i class="fa-solid fa-arrow-left"></i> 
+          </span>
+          <span class="p_next">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
         </p>
       </div>
     </div>

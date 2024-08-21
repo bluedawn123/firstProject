@@ -1,10 +1,49 @@
-window.addEventListener("scroll", function(){
+window.addEventListener("scroll", function () {
   var header = document.querySelector("nav");
   header.classList.toggle("sticky", window.scrollY > 0);
 })
 
+// 쿠키
+// 쿠키 설정 함수
+function setCookie(name, value, days) {
+  const date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expires = "expires=" + date.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
 
+// 쿠키 가져오기 함수
+function getCookie(name) {
+  const cname = name + "=";
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const cookieArr = decodedCookie.split(';');
+  for (let i = 0; i < cookieArr.length; i++) {
+    let c = cookieArr[i];
+    while (c.charAt(0) === ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(cname) === 0) {
+      return c.substring(cname.length, c.length);
+    }
+  }
+  return "";
+}
 
+// 팝업을 닫고 쿠키 설정
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+  setCookie("popupShown", "true", 1);  // 1일 동안 쿠키 저장
+}
+
+// 페이지 로드 시 쿠키 확인 후 팝업 표시 여부 결정
+window.onload = function () {
+  const popupShown = getCookie("popupShown");
+  if (popupShown !== "true") {
+    document.getElementById("popup").style.display = "block";
+  }
+};
+
+/////////////////////////메인슬라이드/////////////////////////
 
 const slideWrapper = document.querySelector('.slidewrapper');
 const slideContainer = slideWrapper.querySelector('.slidecontainer');
@@ -16,19 +55,19 @@ let timer;
 let pagerHTML = '';
 
 // 페이저 원슬라이드로 페이저 생성
-slides.forEach((item,idx)=>{
-    pagerHTML = pagerHTML + `<a href="#">${idx}</a>`;
-    item.style.top = `${idx*100}%`    //가로배치
-  });
+slides.forEach((item, idx) => {
+  pagerHTML = pagerHTML + `<a href="#">${idx}</a>`;
+  item.style.top = `${idx * 100}%`    //가로배치
+});
 pager.innerHTML = pagerHTML;
 
 const pagerBtn = pager.querySelectorAll('a');
 
-pagerBtn.forEach( (pager, idx) => {
-    pager.addEventListener('click', (e) =>{
-        e.preventDefault();
-        showSlide(idx);
-    })
+pagerBtn.forEach((pager, idx) => {
+  pager.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSlide(idx);
+  })
 })
 
 // 
@@ -36,32 +75,32 @@ showSlide(0)
 
 
 
-function showSlide(num){
-    if(currentIdx === num) return; 
-    let currentSlide = slides[currentIdx];
-    let nextSlide = slides[num];
+function showSlide(num) {
+  if (currentIdx === num) return;
+  let currentSlide = slides[currentIdx];
+  let nextSlide = slides[num];
 
-    currentSlide.animate( [ {top: '0%'}, {top: '-100%'} ], {duration:500, fill:'forwards'} );
-    nextSlide.animate( [ {top: '100%'}, {top: '0%'} ], {duration:500, fill:'forwards'} );
-    currentIdx = num; 
+  currentSlide.animate([{ top: '0%' }, { top: '-100%' }], { duration: 500, fill: 'forwards' });
+  nextSlide.animate([{ top: '100%' }, { top: '0%' }], { duration: 500, fill: 'forwards' });
+  currentIdx = num;
 
-    updatePager();
+  updatePager();
 }
 
-function updatePager(){
-  for (let pager of pagerBtn){
+function updatePager() {
+  for (let pager of pagerBtn) {
     pager.classList.remove('active');
   }
   pagerBtn[currentIdx].classList.add('active');
 }
 updatePager();
 
-function autoSlide(){
-  timer = setInterval( ()=>{
-    let nextIdx = (currentIdx + 1) % slideCount; 
-    showSlide(nextIdx); 
+function autoSlide() {
+  timer = setInterval(() => {
+    let nextIdx = (currentIdx + 1) % slideCount;
+    showSlide(nextIdx);
   }, 7000);
-  
+
 }
 
 autoSlide();
@@ -74,7 +113,7 @@ autoSlide();
 //     autoSlide();
 // })
 
-/////////////////////////////////////////////////////////////////
+//////////////////////////////상품슬라이드///////////////////////////
 const p_slideWrapper = document.querySelector('.p_slide_wrapper');
 const p_slideContainer = p_slideWrapper.querySelector('.p_slides');
 const p_slides = p_slideContainer.querySelectorAll('li');
@@ -88,7 +127,7 @@ const p_nextBtn = p_slideWrapper.querySelector('.p_next');
 
 //복사본 생성
 let p_slidesHTML = p_slideContainer.innerHTML;
-let p_clonedSlidesHTML = p_slidesHTML.replace(/<li>/g,'<li class="clone">');
+let p_clonedSlidesHTML = p_slidesHTML.replace(/<li>/g, '<li class="clone">');
 p_slideContainer.innerHTML = p_clonedSlidesHTML + p_slideContainer.innerHTML;
 p_slideContainer.innerHTML += p_clonedSlidesHTML;
 
@@ -96,10 +135,10 @@ const p_allSlideCount = p_slideContainer.querySelectorAll('li').length;
 
 //슬라이드 전체 너비 반영
 /* (200x5)+(30x4) */
-p_slideContainer.style.width = (p_slideWidth*p_allSlideCount)+(p_slideGap*(p_allSlideCount-1))+'px';
+p_slideContainer.style.width = (p_slideWidth * p_allSlideCount) + (p_slideGap * (p_allSlideCount - 1)) + 'px';
 
 //슬라이드의 너비만큼 중앙으로 위치이동. (안하면 복사본의 첫페이지만 보기때문)
-let p_moveAmount = p_slideWidth*p_slideCount+p_slideGap*p_slideCount;
+let p_moveAmount = p_slideWidth * p_slideCount + p_slideGap * p_slideCount;
 p_slideContainer.style.transform = `translateX(-${p_moveAmount}px)`;
 
 
@@ -108,7 +147,10 @@ p_slideContainer.style.transform = `translateX(-${p_moveAmount}px)`;
 moveSlide함수는 숫자가 들어오면 슬라이드 이동
 num = 1  slideContainer -230, num = 2  slideContainer -460
 */
-function moveSlide(num){
+
+moveSlide(0);
+
+function moveSlide(num) {
   /*
   ci 7번이 복사본 마지막 -> ci 2  -460px
   ci -5 복사본 처음 -> ci 0   0px
@@ -116,48 +158,48 @@ function moveSlide(num){
   복사본의 마지막,처음이면 원본으로 돌려놔야한다.
   여기선, currentIdx가 7, -5가 마지막, 처음이다. 
 */
-p_slideContainer.style.left = `${-num*(p_slideWidth+p_slideGap)}px`;
-p_currentIdx = num;
+  p_slideContainer.style.left = `${-num * (p_slideWidth + p_slideGap)}px`;
+  p_currentIdx = num;
 
-  if(p_currentIdx === p_slideCount*2-p_maxSlides){
-    setTimeout(()=>{
+  if (p_currentIdx === p_slideCount * 2 - p_maxSlides) {
+    setTimeout(() => {
       p_slideContainer.classList.remove('animated');  //눈속임
-      p_slideContainer.style.left = `-${(num-p_slideCount)*(p_slideWidth+p_slideGap)}px`;
-      p_currentIdx = num-p_slideCount;
+      p_slideContainer.style.left = `-${(num - p_slideCount) * (p_slideWidth + p_slideGap)}px`;
+      p_currentIdx = num - p_slideCount;
     }, 500);
 
     //다시 animated 붙혀주기
-    setTimeout( () => {
+    setTimeout(() => {
       p_slideContainer.classList.add('animated');
     }, 600)
   }
 
 
 
-if(p_currentIdx === -p_slideCount){
-  setTimeout(()=>{
-    p_slideContainer.classList.remove('animated');  //눈속임
-    p_slideContainer.style.left = '0px';
-    p_currentIdx = 0;
-  }, 500);
+  if (p_currentIdx === -p_slideCount) {
+    setTimeout(() => {
+      p_slideContainer.classList.remove('animated');  //눈속임
+      p_slideContainer.style.left = '0px';
+      p_currentIdx = 0;
+    }, 500);
 
-  //다시 animated 붙혀주기
-  setTimeout( () => {
-    p_slideContainer.classList.add('animated');
-  }, 600)
-}
+    //다시 animated 붙혀주기
+    setTimeout(() => {
+      p_slideContainer.classList.add('animated');
+    }, 600)
+  }
 }
 
 
 /*어떤것이 들어오던간데 slideTrigger을 false로 바꿔놔서, 
 해당 시간이 지나기 전에 실행을 되지 않게 한다. */
-function debounce(callback, time){
+function debounce(callback, time) {
   let slideTrigger = true;
-  return ()=>{
-    if(slideTrigger){
+  return () => {
+    if (slideTrigger) {
       callback();
       slideTrigger = false;
-      setTimeout( () => {
+      setTimeout(() => {
         slideTrigger = true;
       }, time)
     }
@@ -166,16 +208,37 @@ function debounce(callback, time){
 
 
 // 이전, 다음 버튼으로 이동하기
-p_nextBtn.addEventListener('click', debounce( ()=>{  
-  moveSlide(p_currentIdx + 1); 
-}, 500) );
+p_nextBtn.addEventListener('click', debounce(() => {
+  moveSlide(p_currentIdx + 1);
+}, 500));
 
-p_prevBtn.addEventListener('click', debounce( ()=>{ 
-  moveSlide(p_currentIdx - 1); 
-}, 500) );
+p_prevBtn.addEventListener('click', debounce(() => {
+  moveSlide(p_currentIdx - 1);
+}, 500));
+
+function AutoSlide(){
+  timer = setInterval(()=>{
+    let p_nextIdx = (p_currentIdx + 1)%p_slideCount;
+
+    moveSlide(p_nextIdx);
+  }, 4000);
+}
+
+AutoSlide();
+
+slideWrapper.addEventListener('mouseenter',()=>{
+  clearInterval(timer);
+});
+slideWrapper.addEventListener('mouseleave',()=>{
+  AutoSlide();
+});
 
 
-//////////////////////탭
+
+
+
+
+//////////////////////////////탭상품들//////////////////////////
 
 // grid관련
 let product1 = [{
@@ -341,9 +404,9 @@ let newHtml = '';
 
 
 //초기 배열 + 추가
-product1.slice(0,10).forEach(item => {
+product1.slice(0, 10).forEach(item => {
   newHtml +=
-      `<li>
+    `<li>
   <figure>
     <img src="${item.url}" alt="">
     <figcaption>
@@ -367,22 +430,22 @@ let counter = 0; // 숫자를 지정해주기 위해서.
 //빈 배열에 id, text, price을 밀어넣음.
 for (let i = 0; i < captions.length; i++) {
   captionArr.push({
-      url: images[i].getAttribute('src'),
+    url: images[i].getAttribute('src'),
 
-      id: counter++, // 고유 ID를 부여합니다.
-      text: captions[i].textContent, // 텍스트를 추가합니다.
-      price: Number(prices[i].textContent) // 가격을 추가합니다.
+    id: counter++, // 고유 ID를 부여합니다.
+    text: captions[i].textContent, // 텍스트를 추가합니다.
+    price: Number(prices[i].textContent) // 가격을 추가합니다.
   });
 }
 
 const top10 = [];
-for (let i = 0; i < 10; i++){
+for (let i = 0; i < 10; i++) {
   top10.push({
-      url: images[i].getAttribute('src'),
+    url: images[i].getAttribute('src'),
 
-      id: counter++, 
-      text: captions[i].textContent, 
-      price: Number(prices[i].textContent) 
+    id: counter++,
+    text: captions[i].textContent,
+    price: Number(prices[i].textContent)
   }
   )
 }
@@ -391,13 +454,13 @@ searchInput.addEventListener('change', (e) => {
   let keywords = e.target.value
 
   imageListItem.forEach((item, idx, all) => {
-      item.classList.add('d-none')
+    item.classList.add('d-none')
   })
 
   let filteredArr = captionArr.filter(caption => caption.text.includes(keywords));
 
   for (let item of filteredArr) {
-      imageListItem[item.id].classList.remove('d-none');
+    imageListItem[item.id].classList.remove('d-none');
   }
   //count 갯수변경
 })
@@ -408,27 +471,27 @@ const priceSelector = document.querySelector("#price__selector");
 priceSelector.addEventListener("change", (e) => {
   if (e.target.value == "낮은 가격순") {
 
-      //낮은가격순일때 할일
-      //모든 아이템을 일단 없애준다.
-      imageListItem.forEach( item => {
-          item.classList.add(dnone)
-      })
+    //낮은가격순일때 할일
+    //모든 아이템을 일단 없애준다.
+    imageListItem.forEach(item => {
+      item.classList.add(dnone)
+    })
 
-      console.log(imageListItem)
+    console.log(imageListItem)
 
-      //내림차순을 만들어준다.
-      const newCaptionArr1 = [...captionArr];
-      newCaptionArr1.sort((a, b) => {
-          return a.price - b.price;
-      });
+    //내림차순을 만들어준다.
+    const newCaptionArr1 = [...captionArr];
+    newCaptionArr1.sort((a, b) => {
+      return a.price - b.price;
+    });
 
-      console.log(newCaptionArr1) //price 기준 low -> high로 새로운 배열이 모두 나온다.
+    console.log(newCaptionArr1) //price 기준 low -> high로 새로운 배열이 모두 나온다.
 
-      let lowtoHighPriceHtml = '';
+    let lowtoHighPriceHtml = '';
 
-      newCaptionArr1.slice(0,10).forEach(item => {
-          lowtoHighPriceHtml +=
-              `<li>
+    newCaptionArr1.slice(0, 10).forEach(item => {
+      lowtoHighPriceHtml +=
+        `<li>
           <figure>
             <img src="${item.url}" alt="">
             <figcaption>
@@ -437,25 +500,25 @@ priceSelector.addEventListener("change", (e) => {
             </figcaption>
           </figure>
         </li>`
-      })
-      imageList.innerHTML = lowtoHighPriceHtml
+    })
+    imageList.innerHTML = lowtoHighPriceHtml
 
   } else if (e.target.value == "높은 가격순") {
-      //모든 아이템을 일단 없애준다.
-      imageListItem.forEach((item, idx, all) => {
-          item.classList.add(dnone)
-      })
+    //모든 아이템을 일단 없애준다.
+    imageListItem.forEach((item, idx, all) => {
+      item.classList.add(dnone)
+    })
 
-      //내림차순을 만들어준다.
-      const newCaptionArr2 = [...captionArr];
-      newCaptionArr2.sort((a, b) => {
-          return b.price - a.price;
-      });
+    //내림차순을 만들어준다.
+    const newCaptionArr2 = [...captionArr];
+    newCaptionArr2.sort((a, b) => {
+      return b.price - a.price;
+    });
 
-      let HighToLowPrice = '';
-      newCaptionArr2.slice(0,10).forEach(item => {
-          HighToLowPrice +=
-              `<li>
+    let HighToLowPrice = '';
+    newCaptionArr2.slice(0, 10).forEach(item => {
+      HighToLowPrice +=
+        `<li>
           <figure>
             <img src="${item.url}" alt="">
             <figcaption>
@@ -464,22 +527,22 @@ priceSelector.addEventListener("change", (e) => {
             </figcaption>
           </figure>
         </li>`
-      })
-      imageList.innerHTML = HighToLowPrice
+    })
+    imageList.innerHTML = HighToLowPrice
 
 
   } else { //신상품. id순으로 하면된다. 
-      imageListItem.forEach(item => {
-          item.classList.remove(dnone)
-      })
+    imageListItem.forEach(item => {
+      item.classList.remove(dnone)
+    })
 
-      const newCaptionArr3 = [...top10];
+    const newCaptionArr3 = [...top10];
 
-      let newItems = '';
+    let newItems = '';
 
-      newCaptionArr3.forEach(item => {
-          newItems +=
-              `<li>
+    newCaptionArr3.forEach(item => {
+      newItems +=
+        `<li>
           <figure>
             <img src="${item.url}" alt="">
             <figcaption>
@@ -488,8 +551,8 @@ priceSelector.addEventListener("change", (e) => {
             </figcaption>
           </figure>
         </li>`
-      })
-      imageList.innerHTML = newItems
+    })
+    imageList.innerHTML = newItems
   }
 });
 
@@ -500,39 +563,39 @@ let tabContent = document.querySelectorAll('#tab-content > div')
 
 for (let tm of tabMenu) {
   tm.addEventListener('click', function (e) {
-      e.preventDefault();
+    e.preventDefault();
 
-      for (let tm of tabMenu) {
-          tm.classList.remove('tab-active');
-      }
-      tm.classList.add('tab-active');
+    for (let tm of tabMenu) {
+      tm.classList.remove('tab-active');
+    }
+    tm.classList.add('tab-active');
 
-      for (let tc of tabContent) {
-          tc.classList.remove('tab-active');
-      }
+    for (let tc of tabContent) {
+      tc.classList.remove('tab-active');
+    }
 
-      let target = tm.getAttribute('href');
+    let target = tm.getAttribute('href');
 
-      //선택한 것이 남자라면
-      if (target === 'men') {
-          //셀렉터 안보이게
-          search_wrapper.classList.add(dnone)
-          priceSelector.classList.add(dnone)
+    //선택한 것이 남자라면
+    if (target === 'men') {
+      //셀렉터 안보이게
+      search_wrapper.classList.add(dnone)
+      priceSelector.classList.add(dnone)
 
 
-          //일단없애주고
-          imageListItem.forEach((item, idx, all) => {
-              item.classList.add(dnone)
-          })
-          //type=men인것으로 새로운 배열을 만들어준다. 
-          const menProducts = product1.filter(item => item.type === 'men');
-          console.log(menProducts); // 남성용 제품들만 해당하는 것들이 잘 들어있다. 
+      //일단없애주고
+      imageListItem.forEach((item, idx, all) => {
+        item.classList.add(dnone)
+      })
+      //type=men인것으로 새로운 배열을 만들어준다. 
+      const menProducts = product1.filter(item => item.type === 'men');
+      console.log(menProducts); // 남성용 제품들만 해당하는 것들이 잘 들어있다. 
 
-          let emptyHtml = '';
+      let emptyHtml = '';
 
-          menProducts.forEach(item => {
-              emptyHtml +=
-                  `<li>
+      menProducts.forEach(item => {
+        emptyHtml +=
+          `<li>
               <figure>
                   <img src="${item.url}" alt="">
                   <figcaption>
@@ -541,28 +604,28 @@ for (let tm of tabMenu) {
                   </figcaption>
               </figure>
           </li>`
-          })
-          imageList.innerHTML = emptyHtml
-
-          
-
-      } else if (target === 'women') {
-          search_wrapper.classList.add(dnone)
-          priceSelector.classList.add(dnone)
+      })
+      imageList.innerHTML = emptyHtml
 
 
-          //일단없애주고
-          imageListItem.forEach((item, idx, all) => {
-              item.classList.add(dnone)
-          })
 
-          const womenProducts = product1.filter(item => item.type === 'women');
+    } else if (target === 'women') {
+      search_wrapper.classList.add(dnone)
+      priceSelector.classList.add(dnone)
 
-          let emptyHtml2 = '';
 
-          womenProducts.forEach(item => {
-              emptyHtml2 +=
-                  `<li>
+      //일단없애주고
+      imageListItem.forEach((item, idx, all) => {
+        item.classList.add(dnone)
+      })
+
+      const womenProducts = product1.filter(item => item.type === 'women');
+
+      let emptyHtml2 = '';
+
+      womenProducts.forEach(item => {
+        emptyHtml2 +=
+          `<li>
               <figure>
                   <img src="${item.url}" alt="">
                   <figcaption>
@@ -571,26 +634,26 @@ for (let tm of tabMenu) {
                   </figcaption>
               </figure>
           </li>`
-          })
-          imageList.innerHTML = emptyHtml2
+      })
+      imageList.innerHTML = emptyHtml2
 
-      } else if (target === 'kids') {
-          search_wrapper.classList.add(dnone)
-          priceSelector.classList.add(dnone)
+    } else if (target === 'kids') {
+      search_wrapper.classList.add(dnone)
+      priceSelector.classList.add(dnone)
 
 
-          //일단없애주고
-          imageListItem.forEach((item, idx, all) => {
-              item.classList.add(dnone)
-          })
+      //일단없애주고
+      imageListItem.forEach((item, idx, all) => {
+        item.classList.add(dnone)
+      })
 
-          const kidsProducts = product1.filter(item => item.type === 'kids');
+      const kidsProducts = product1.filter(item => item.type === 'kids');
 
-          let emptyHtml3 = '';
+      let emptyHtml3 = '';
 
-          kidsProducts.forEach(item => {
-              emptyHtml3 +=
-                  `<li>
+      kidsProducts.forEach(item => {
+        emptyHtml3 +=
+          `<li>
               <figure>
                   <img src="${item.url}" alt="">
                   <figcaption>
@@ -599,25 +662,25 @@ for (let tm of tabMenu) {
                   </figcaption>
               </figure>
           </li>`
-          })
-          imageList.innerHTML = emptyHtml3
+      })
+      imageList.innerHTML = emptyHtml3
 
-      } else if (target === 'baby') {
-          search_wrapper.classList.add(dnone)
-          priceSelector.classList.add(dnone)
+    } else if (target === 'baby') {
+      search_wrapper.classList.add(dnone)
+      priceSelector.classList.add(dnone)
 
-          //일단없애주고
-          imageListItem.forEach((item, idx, all) => {
-              item.classList.add(dnone)
-          })
+      //일단없애주고
+      imageListItem.forEach((item, idx, all) => {
+        item.classList.add(dnone)
+      })
 
-          const babyProducts = product1.filter(item => item.type === 'baby');
+      const babyProducts = product1.filter(item => item.type === 'baby');
 
-          let emptyHtml4 = '';
+      let emptyHtml4 = '';
 
-          babyProducts.forEach(item => {
-              emptyHtml4 +=
-                  `<li>
+      babyProducts.forEach(item => {
+        emptyHtml4 +=
+          `<li>
               <figure>
                   <img src="${item.url}" alt="">
                   <figcaption>
@@ -626,24 +689,24 @@ for (let tm of tabMenu) {
                   </figcaption>
               </figure>
           </li>`
-          })
-          imageList.innerHTML = emptyHtml4
+      })
+      imageList.innerHTML = emptyHtml4
 
-      } else {
-          search_wrapper.classList.remove(dnone)
-          priceSelector.classList.remove(dnone)
+    } else {
+      search_wrapper.classList.remove(dnone)
+      priceSelector.classList.remove(dnone)
 
-          imageListItem.forEach(item => {
-              item.classList.remove(dnone)
-          })
+      imageListItem.forEach(item => {
+        item.classList.remove(dnone)
+      })
 
-          const newCaptionArr3 = [...top10];
+      const newCaptionArr3 = [...top10];
 
-          let newItems = '';
+      let newItems = '';
 
-          newCaptionArr3.forEach(item => {
-              newItems +=
-                  `<li>
+      newCaptionArr3.forEach(item => {
+        newItems +=
+          `<li>
               <figure>
                 <img src="${item.url}" alt="">
                 <figcaption>
@@ -652,9 +715,9 @@ for (let tm of tabMenu) {
                 </figcaption>
               </figure>
             </li>`
-          })
-          imageList.innerHTML = newItems
+      })
+      imageList.innerHTML = newItems
 
-      }
+    }
   });
 }
