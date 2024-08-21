@@ -244,14 +244,14 @@ slideWrapper.addEventListener('mouseleave',()=>{
 let product1 = [{
   id: 0,
   price: 75000,
-  title: "페이퍼셔츠-민트그레이",
+  title: "QE2_SH02 페이퍼셔츠-민트그레이",
   url: "images/men1.jpg",
   type: 'men'
 },
 {
   id: 1,
   price: 80000,
-  title: "페이퍼셔츠-화이트",
+  title: "PP_SH13 페이퍼셔츠-화이트",
   url: "images/men2.jpg",
   type: 'men'
 },
@@ -259,77 +259,77 @@ let product1 = [{
 {
   id: 2,
   price: 130000,
-  title: "린넨 스트링 팬츠 - 네이비",
+  title: "LN_ST02 린넨 스트링 팬츠 - 네이비",
   url: "images/men3.jpg",
   type: 'men'
 },
 {
   id: 3,
   price: 135000,
-  title: "치코 스트라이프 반팔티-그린",
+  title: "KC_ST05 치코 스트라이프 반팔티-그린",
   url: "images/women1.jpg",
   type: 'women'
 },
 {
   id: 4,
   price: 115000,
-  title: "프렌치 스트라이프 셔츠-네이비",
+  title: "FR_ST03 프렌치 스트라이프 셔츠-네이비",
   url: "images/women2.jpg",
   type: 'women'
 },
 {
   id: 5,
   price: 215000,
-  title: "페이퍼셔츠-라벤더",
+  title: "PP_LV05 페이퍼셔츠-라벤더",
   url: "images/women3.jpg",
   type: 'women'
 },
 {
   id: 6,
   price: 85000,
-  title: "페이퍼셔츠-화이트",
+  title: "PP_ST01 페이퍼셔츠-화이트",
   url: "images/women4.jpg",
   type: 'women'
 },
 {
   id: 7,
   price: 37000,
-  title: "린넨 블루 셔츠",
+  title: "LN_BL09 린넨 블루 셔츠",
   url: "images/kids1.jpg",
   type: 'kids'
 },
 {
   id: 8,
   price: 135050,
-  title: "솔리드 레몬 셔츠",
+  title: "SD_LM01 솔리드 레몬 셔츠",
   url: "images/kids2.jpg",
   type: 'kids'
 },
 {
   id: 9,
   price: 25030,
-  title: "코든 스트라이프 티셔츠",
+  title: "CT_ST01 코튼 스트라이프 티셔츠",
   url: "images/kids3.jpg",
   type: 'kids'
 },
 {
   id: 10,
   price: 15000,
-  title: "베이비 퍼블 티셔츠",
+  title: "BB_PU09 베이비 퍼블 티셔츠",
   url: "images/baby1.jpg",
   type: 'baby'
 },
 {
   id: 11,
   price: 15000,
-  title: "베이비 레몬 티셔츠",
+  title: "BT_LM01 베이비 레몬 티셔츠",
   url: "images/baby2.jpg",
   type: 'baby'
 },
 {
   id: 12,
   price: 15000,
-  title: "코든 스트라이프 티셔츠",
+  title: "CT_ST02 코튼 스트라이프 티셔츠",
   url: "images/baby3.jpg",
   type: 'baby'
 },
@@ -343,42 +343,42 @@ let product1 = [{
 {
   id: 14,
   price: 32000,
-  title: "키즈 퍼플 스트라이프 티셔츠",
+  title: "QE2_SH02 키즈 퍼플 스트라이프 티셔츠",
   url: "images/kids4.jpg",
   type: 'kids'
 },
 {
   id: 15,
   price: 35000,
-  title: "원턱 데님 쇼츠",
-  url: "images/women4.jpg",
+  title: "OE2_SH02 우먼 클래식 셔츠",
+  url: "images/women6.jpg",
   type: 'women'
 },
 {
   id: 16,
   price: 95000,
-  title: "맨즈 레더 벨트",
+  title: "QE2_BT02 맨즈 레더 벨트",
   url: "images/men5.jpg",
   type: 'men'
 },
 {
   id: 17,
   price: 55000,
-  title: "블루 도트 셔츠",
+  title: "BL_DT01 블루 도트 셔츠",
   url: "images/men6.jpg",
   type: 'men'
 },
 {
   id: 18,
   price: 45600,
-  title: "심플 데님 셔츠",
+  title: "SP_CU01 심플 데님 셔츠",
   url: "images/men7.jpg",
   type: 'men'
 },
 {
   id: 19,
   price: 65600,
-  title: "칼라드 화이트 셔츠",
+  title: "WH_CL01 칼라드 화이트 셔츠",
   url: "images/men8.jpg",
   type: 'men'
 },
@@ -438,11 +438,11 @@ for (let i = 0; i < captions.length; i++) {
   });
 }
 
+//id 기준으로 새 배열 top10 만들기
 const top10 = [];
 for (let i = 0; i < 10; i++) {
   top10.push({
     url: images[i].getAttribute('src'),
-
     id: counter++,
     text: captions[i].textContent,
     price: Number(prices[i].textContent)
@@ -496,7 +496,7 @@ priceSelector.addEventListener("change", (e) => {
             <img src="${item.url}" alt="">
             <figcaption>
               <p>${item.text}</p>
-              <p>${item.price}</p>
+              <p>${item.price}KRW</p>
             </figcaption>
           </figure>
         </li>`
@@ -523,7 +523,7 @@ priceSelector.addEventListener("change", (e) => {
             <img src="${item.url}" alt="">
             <figcaption>
               <p>${item.text}</p>
-              <p>${item.price}</p>
+              <p>${item.price}KRW</p>
             </figcaption>
           </figure>
         </li>`
@@ -547,7 +547,7 @@ priceSelector.addEventListener("change", (e) => {
             <img src="${item.url}" alt="">
             <figcaption>
               <p>${item.text}</p>
-              <p>${item.price}</p>
+              <p>${item.price}KRW</p>
             </figcaption>
           </figure>
         </li>`
@@ -600,7 +600,7 @@ for (let tm of tabMenu) {
                   <img src="${item.url}" alt="">
                   <figcaption>
                       <p>${item.title}</p>
-                      <p>${item.price}</p>
+                      <p>${item.price}KRW</p>
                   </figcaption>
               </figure>
           </li>`
@@ -630,7 +630,7 @@ for (let tm of tabMenu) {
                   <img src="${item.url}" alt="">
                   <figcaption>
                       <p>${item.title}</p>
-                      <p>${item.price}</p>
+                      <p>${item.price}KRW</p>
                   </figcaption>
               </figure>
           </li>`
@@ -658,7 +658,7 @@ for (let tm of tabMenu) {
                   <img src="${item.url}" alt="">
                   <figcaption>
                       <p>${item.title}</p>
-                      <p>${item.price}</p>
+                      <p>${item.price}KRW</p>
                   </figcaption>
               </figure>
           </li>`
@@ -685,7 +685,7 @@ for (let tm of tabMenu) {
                   <img src="${item.url}" alt="">
                   <figcaption>
                       <p>${item.title}</p>
-                      <p>${item.price}</p>
+                      <p>${item.price}KRW</p>
                   </figcaption>
               </figure>
           </li>`
@@ -711,13 +711,13 @@ for (let tm of tabMenu) {
                 <img src="${item.url}" alt="">
                 <figcaption>
                   <p>${item.text}</p>
-                  <p>${item.price}</p>
+                  <p>${item.price}KRW</p>
                 </figcaption>
               </figure>
             </li>`
       })
       imageList.innerHTML = newItems
-
+KRW
     }
   });
 }
