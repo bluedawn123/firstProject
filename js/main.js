@@ -1,48 +1,49 @@
-window.addEventListener("scroll", function () {
-  var header = document.querySelector("nav");
-  header.classList.toggle("sticky", window.scrollY > 0);
-})
-
-// 쿠키
-// 쿠키 설정 함수
 function setCookie(name, value, days) {
   const date = new Date();
-  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // days를 밀리초로 변환
   const expires = "expires=" + date.toUTCString();
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }
 
-// 쿠키 가져오기 함수
+// 쿠키를 가져오는 함수
 function getCookie(name) {
-  const cname = name + "=";
   const decodedCookie = decodeURIComponent(document.cookie);
   const cookieArr = decodedCookie.split(';');
   for (let i = 0; i < cookieArr.length; i++) {
-    let c = cookieArr[i];
-    while (c.charAt(0) === ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(cname) === 0) {
-      return c.substring(cname.length, c.length);
-    }
+      let cookie = cookieArr[i].trim();
+      if (cookie.indexOf(name + "=") === 0) {
+          return cookie.substring(name.length + 1, cookie.length);
+      }
   }
   return "";
 }
 
-// 팝업을 닫고 쿠키 설정
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
-  setCookie("popupShown", "true", 1);  // 1일 동안 쿠키 저장
+// 팝업을 보여주는 함수
+function showPopup() {
+  const dontShow = getCookie("dontShowToday");
+  if (!dontShow) {
+      document.getElementById("popup").style.display = "block";
+  }
 }
 
-// 페이지 로드 시 쿠키 확인 후 팝업 표시 여부 결정
-window.onload = function () {
-  const popupShown = getCookie("popupShown");
-  if (popupShown !== "true") {
-    document.getElementById("popup").style.display = "block";
-  }
-};
+// "닫기" 버튼 클릭 시 팝업을 닫는 함수
+document.getElementById("closeBtn").addEventListener("click", function() {
+  document.getElementById("popup").style.display = "none";
+});
 
+// "하루 동안 안 보기" 체크박스 클릭 시 쿠키 설정
+document.getElementById("dontShowToday").addEventListener("change", function() {
+  if (this.checked) {
+      setCookie("dontShowToday", "true", 1); // 쿠키를 1일로 설정
+  } else {
+      document.cookie = "dontShowToday=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; // 쿠키 삭제
+  }
+});
+
+// 페이지 로드 시 팝업을 확인
+window.onload = function() {
+  showPopup();
+};
 /////////////////////////메인슬라이드/////////////////////////
 
 
@@ -420,6 +421,9 @@ product1.slice(0, 10).forEach(item => {
 </li>`
 })
 imageList.innerHTML = newHtml
+
+console.log(imageList)
+
 const imageListItem = imageList.querySelectorAll('li')
 
 
@@ -457,23 +461,34 @@ for (let i = 0; i < 10; i++) {
 
 
 searchInput.addEventListener('change', (e) => {
-  let keywords = e.target.value
+  let keywords = e.target.value;
 
-  imageListItem.forEach((item, idx, all) => {
-    item.classList.add('d-none')
-  })
+  // 전체 리스트를 먼저 숨깁니다.
+  imageListItem.forEach((item) => {
+    item.classList.add('d-none');
+  });
 
+  // 검색어에 해당하는 필터된 배열 생성
   let filteredArr = captionArr.filter(caption => caption.text.includes(keywords));
 
-  for (let item of filteredArr) {
-    imageListItem[item.id].classList.remove('d-none');
+  // 필터된 배열이 있으면 해당 아이템만 보여줍니다.
+  if (filteredArr.length > 0) {
+    for (let item of filteredArr) {
+      imageListItem[item.id].classList.remove('d-none');
+    }
+  } else {
+    // 필터된 결과가 없을 경우 표시할 HTML을 동적으로 추가
+    imageList.innerHTML = `
+      <li class="no-results">
+        <figure>
+          <figcaption>
+            <p>'${keywords}'와 일치하는 상품이 없습니다.</p>
+            <p>다른 검색어를 다시 입력해주세요.</p>
+          </figcaption>
+        </figure>
+      </li>`;
   }
-  
-  if(filteredArr == ''){
-    console.log('없음')
-  }
-
-})
+});
 
 
 // ///////////////////////////////////////가격정렬을 만들어보자/////////////////////////

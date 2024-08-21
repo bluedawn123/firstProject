@@ -35,12 +35,25 @@
 </head>
 
 <body>
-  <div id="popup"
-    style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: lightgrey; padding: 20px; border: 2px solid black;">
-    <p>해당 사이트는 개인 포트폴리오용 사이트입니다.</p>
-    <p>하루 동안 이 창이 다시 뜨지 않습니다.</p>
-    <button onclick="closePopup()">닫기</button>
-  </div>
+  <div id="popup" class="popup-container">
+    <div class="popup-content">
+        <h2 class="popup-header">안내</h2>
+        <p>본 웹사이트는 구직용 포트폴리오 사이트로서 유니클로와는 관계가 없습니다. </p>
+        <p>과정명 :『기업연계 프로젝트형』 웹디자인(웹퍼블리셔)&프론트엔드 SW개발자 양성과정 </p>
+        <p>주요 특징: HTML, CSS 기초, 웹표준 준수, float, position, vanila javascript</p>
+        <p>구현 완료 페이지 : 메인화면</p>
+        <p>만든이 : 윤준호</p>
+        <p>github 주소 : <a href="https://github.com/bluedawn123" target="_blank">https://github.com/bluedawn123</a></p>
+        <p>프로젝트 주소 : <a href="https://bluedawn123.github.io/firstProject/" target="_blank">https://bluedawn123.github.io/firstProject/</a></p>
+        <p>figma 주소 : <a href="https://www.figma.com/design/aKSvHOQC7KaqaYANKMhXSN/Untitled?node-id=44-125&t=NPv4TblkQj8AW8tv-0" target="_blank">https://www.figma.com/design/aKSvHOQC7KaqaYANKMhXSN/Untitled?node-id=44-125&t=NPv4TblkQj8AW8tv-0</a></p>
+        <p>이 팝업을 하루 동안 안 보시겠습니까?</p>
+        <label class="popup-checkbox">
+            <input type="checkbox" id="dontShowToday"> 하루 동안 안 보기
+        </label>
+        <button id="closeBtn" class="popup-close-btn">닫기</button>
+    </div>
+</div>
+
 
   <header class="page-header">
     <div class="header_img">
